@@ -64,7 +64,10 @@ if (promptFight == "fight" || promptFight == "FIGHT") {
     }
 } else {
     window.alert("You need to choose a valid option. Try again!");
-}
+} // end of the fight function
+
+// run fight function to start the game 
+fight();
 
 /*
 //Subtract the value of 'playerAttack' from the value of 'enemyHealth' and use that result to update the value in the 'enemyHealth' variable
