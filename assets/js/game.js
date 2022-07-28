@@ -40,7 +40,7 @@ var fight = function(enemy) {
         //leave while() loop since enemy is dead
         break;
         } else {
-        window.alert(enemy.name + " stil has " + enemy.health + " health left.");
+        window.alert(enemy.name + " still has " + enemy.health + " health left.");
         }
 
      // remove player's health by subtracting the amount set in the enemyAttack variable
@@ -66,15 +66,15 @@ var startGame = function () {
     // reset player stats
     playerInfo.reset();
 
-for (var i = 0; i < enemyInfo.length; i++) {
-    if (playerInfo.health > 0) {
-        window.alert('Welcome to Robot Gladiators! Round ' + (i + 1));
+    for (var i = 0; i < enemyInfo.length; i++) {
+        if (playerInfo.health > 0) {
+            window.alert('Welcome to Robot Gladiators! Round ' + (i + 1));
     
-       var pickedEnemyObj = enemyInfo[i];
+            var pickedEnemyObj = enemyInfo[i];
 
-       pickedEnemyObj.health = randomNumber(40, 60);
+             pickedEnemyObj.health = randomNumber(40, 60);
 
-        fight(pickedEnemyObj);
+            fight(pickedEnemyObj);
 
         //if we're not at the last enemy in the array
 
@@ -107,7 +107,7 @@ var endGame = function() {
         window.alert("You've lost your robot in battle.");
     }
 
-var playAgainConfirm = window.confirm("Would you like to play agian?");
+var playAgainConfirm = window.confirm("Would you like to play again?");
 
     if (playAgainConfirm) {
         //restart the game
@@ -148,7 +148,22 @@ var shop = function() {
     
 };
 
+//function to set name 
+
+var getPlayerName = function() {
+    var name = "";
+
+    while (name === "" || name === null) {
+        name = prompt("What is your robot's name?");
+    }
+    
+    console.log("Your robot's name is " + name);
+    return name;
+};
+
 var playerInfo = {
+
+    name: getPlayerName(),
     name: window.prompt("What is your robot's name?"),
     health: 100,
     attack: 10,
@@ -170,7 +185,7 @@ var playerInfo = {
     },
     upgradeAttack: function() {
         if (this.money >= 7) {
-            window.alert("Upgrding player's attack by 6 for 7 dollars.");
+            window.alert("Upgrading player's attack by 6 for 7 dollars.");
             this.attack += 6;
             this.money -= 7;
         } else {
@@ -185,7 +200,7 @@ var enemyInfo = [
         attack: randomNumber (10, 14)
     },
     {
-        name: "Amy Andriod",
+        name: "Amy android",
         attack: randomNumber (10, 14)
     },
     {
